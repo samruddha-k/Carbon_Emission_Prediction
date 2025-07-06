@@ -28,3 +28,23 @@ Curious about how carbon emissions have changed over time, I grouped the data by
 I didn’t stop there — I also wanted to explore the connection between total CO₂ emissions and population size. So, I created another line plot comparing those two variables. It was interesting to see how population growth might be influencing total emissions.
 
 All in all, this initial exploration helped me build a basic understanding of the dataset and guided me toward what I might want to analyze next.
+
+
+Tasks that i did during Week 3 ---->
+
+
+I started off by importing the essential libraries — Pandas and NumPy for data handling, Matplotlib for plotting, and several modules from scikit-learn to build and evaluate the machine learning model. I also used feature_selection and set a random seed to ensure reproducibility throughout the process.
+
+Then, I loaded my cleaned dataset (data_cleaned.csv) and did a quick check using .head() to confirm that everything was in place.
+
+Before jumping into modeling, I cleaned up one specific issue in the data — I removed rows where the country was "ARE", likely because they were outliers or not relevant to the analysis.
+
+Once that was done, I selected a set of feature columns that I believed would be good predictors (such as cereal yield, energy per capita, foreign direct investment, etc.), and chose CO₂ emissions per capita as the target variable.
+
+To evaluate model performance properly, I split the dataset into training and testing sets using train_test_split.
+
+For the model itself, I decided to go with a Random Forest Regressor, which is a solid choice for capturing non-linear patterns in data. After training the model on the training set, I made predictions on the test set and evaluated how well the model performed using R² (coefficient of determination) and Mean Squared Error (MSE).
+
+I also explored cross-validation scores to get a more robust sense of model performance and avoid overfitting.
+
+Toward the end, I looked at feature importances from the Random Forest model to understand which features were most influential in predicting CO₂ emissions per capita. This helped add interpretability to the model and guided potential future improvements.
